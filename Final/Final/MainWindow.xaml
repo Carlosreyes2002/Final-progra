@@ -1,0 +1,86 @@
+﻿<Window x:Class="Final.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Final" xmlns:d1="http://schemas.microsoft.com/netfx/2009/xaml/presentation" xmlns:d2="http://schemas.microsoft.com/xps/2005/06" xmlns:d3="http://schemas.microsoft.com/netfx/2007/xaml/presentation"
+        mc:Ignorable="d"
+        Title="Producto" Height="450" Width="800">
+    <Grid Background="LightPink">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+
+
+            <RowDefinition Height="*" />
+
+
+            <RowDefinition Height="35" />
+
+
+
+
+        </Grid.RowDefinitions>
+
+        <Label Content="Nombre:"/>
+
+        <TextBox x:Name="txtNombre" Grid.Column="1" Margin="5" />
+
+
+
+        <Label Content="Precio:" Grid.Row="1" Margin="712,257,-712,-222" Grid.RowSpan="2" />
+
+
+        <TextBox x:Name="txtPrecio" Grid.Row="1" Grid.Column="1" Margin="10" Background="Transparent" TextChanged="txtPrecio_TextChanged"/>
+
+
+
+
+
+
+        <Button x:Name="btnAgregar" Content="Agregar" Grid.Row="2" Margin="0,8,0,7" Click="btnAgregar_Click" 
+                 Height="20"
+                                    Width="200"
+                                    HorizontalAlignment="Center"
+                Background="Pink"/>
+
+
+        <Button x:Name="btnEditar" Content="Actualizar" Grid.Row="2" Margin="23,8,0,7" Click="btnEditar_Click"
+                 Height="20"
+                                    Width="200"
+                                    HorizontalAlignment="Left" Background="Pink"/>
+
+        <Button x:Name="btnEliminar" Content="Eliminar" Margin="570,8,0,7" Click="btnEliminar_Click" Grid.Row="2" 
+                 Height="20"
+                                    Width="200"
+                                    HorizontalAlignment="Left" Background="Pink"/>
+
+
+
+        <ListView x:Name="listView" Grid.Row="1" Margin="10,5,30,35" SelectionChanged="listView_SelectionChanged" Background="Beige">
+
+
+            <ListView.View>
+
+
+                <GridView>
+
+
+                    <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding Nom}" />
+
+
+                    <GridViewColumn Header="Descripcion" DisplayMemberBinding="{Binding Descripcion}" />
+
+                    <GridViewColumn Header="Precio" DisplayMemberBinding="{Binding Precio}" />
+                    <GridViewColumn Header="Disponible" DisplayMemberBinding="{Binding Disponible}" />
+
+
+
+                </GridView>
+
+
+            </ListView.View>
+        </ListView>
+
+
+    </Grid>
+</Window>
